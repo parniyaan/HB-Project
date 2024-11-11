@@ -1,0 +1,26 @@
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary-color: #ffb700;
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: #050506;
+    color: #ffffff;
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+}

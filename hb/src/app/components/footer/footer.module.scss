@@ -1,0 +1,42 @@
+.footerContainer {
+  height: 400px;
+  background-color: #0c0c0c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //margin-top: 200px;
+  padding: 0 200px;
+
+  .map{
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+  }
+
+  .information {
+    display: flex;
+
+
+    .informationList {
+      //margin-left: 100px;
+
+      &:not(:last-child) {
+        margin-left: 100px;
+      }
+
+      .informationItems {
+
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+
+      .informationHeader {
+        font-weight: 900;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

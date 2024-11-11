@@ -17,13 +17,13 @@ export default function RootLayout() {
     return (
         <html lang="en">
         <ContextProvider>
-            <Navbar/>
             <body>
+            <Navbar/>
             <Header/>
             <Home/>
-            </body>
             <WhatsApp/>
             <Footer/>
+            </body>
         </ContextProvider>
         </html>
     )

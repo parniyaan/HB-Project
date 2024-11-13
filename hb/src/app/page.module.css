@@ -5,7 +5,9 @@
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
+  width: 100px;
 
+  position: relative;
   display: grid;
   grid-template-rows: 20px 1fr 20px;
   align-items: center;

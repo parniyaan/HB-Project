@@ -1,13 +1,21 @@
-'use client'
+"use client"
 
 import React from 'react';
-import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import L from 'leaflet';
 import styles from './footer.module.scss';
 
 function Footer() {
     const position = [35.633931, 50.968348];
+
+    const markerIcon = new L.Icon({
+        iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41],
+    });
 
     return (
         <div className={styles.footerContainer} id="footer">
@@ -16,7 +24,7 @@ function Footer() {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
-                <Marker position={position} />
+                <Marker position={position} icon={markerIcon} />
             </MapContainer>
 
             <div className={styles.information} dir="rtl">

@@ -1,3 +1,5 @@
+'use client'
+
 import whatsApp from "../../images/WhatsApp-Logo.wine.svg";
 import React from 'react';
 import Image from "next/image";
@@ -5,11 +7,11 @@ import Image from "next/image";
 function WhatsApp() {
 
     const style = {
-        width: '130px',
-        height:'130px',
+        width: '150px',
+        height:'150px',
         position: 'fixed',
         right: '1%',
-        bottom: '0',
+        bottom: '40%',
         textDecoration: 'none',
         zIndex: 20,
     };

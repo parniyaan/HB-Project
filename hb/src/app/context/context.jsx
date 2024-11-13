@@ -1,6 +1,5 @@
 'use client';
 
-
 import React, {useState, useContext, useEffect,createContext} from 'react';
 import KMCImage from "../images/products-Images/KMC.jpg";
 import ToyotaHiluxImage from "../images/products-Images/Toyota Hilux.jpg";
@@ -24,7 +23,9 @@ const CarsContext = React.createContext();
 function ContextProvider({children}) {
     const [burgerMenu, setBurgerMenu] = useState(true);
     const [carData, setCarData] = useState([]);
-    const [selectedCar, setSelectedCar] = useState(null)
+    const [selectedCar, setSelectedCar] = useState(null);
+    const [showProduct,setShowProduct] = useState(false);
+    // const [selectedCar,setSelectedCar] =useState();
 
     const data = [
         {
@@ -123,7 +124,9 @@ function ContextProvider({children}) {
             setBurgerMenu,
             carData,
             selectedCar,
-            setSelectedCar
+            setSelectedCar,
+            showProduct,
+            setShowProduct
         }}>
             {children}
         </CarsContext.Provider>

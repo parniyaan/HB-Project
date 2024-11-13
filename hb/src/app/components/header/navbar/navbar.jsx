@@ -20,19 +20,19 @@ function Navbar() {
             <Image src={logo} alt="logo" className={styles.logo} width={50} height={50} />
             <ul className={styles.list}>
                 <li className={styles.listItems}>
-                    <Link href="/#footer" className={styles.listItem}>تماس با ما</Link>
+                    <a href="#footer" className={styles.listItem}>تماس با ما</a>
                     <AddIcCallIcon className={styles.menuIcons} />
                 </li>
                 <li className={styles.listItems}>
-                    <Link href="/#aboutUs" className={styles.listItem}>درباره ی ما</Link>
+                    <a href="#aboutUs" className={styles.listItem}>درباره ی ما</a>
                     <InfoIcon className={styles.menuIcons} />
                 </li>
                 <li className={styles.listItems}>
-                    <Link href="/#blog" className={styles.listItem}>بلاگ</Link>
+                    <a href="#blog" className={styles.listItem}>بلاگ</a>
                     <NotesIcon className={styles.menuIcons} />
                 </li>
                 <li className={styles.listItems}>
-                    <Link href="/#product" className={styles.listItem}>محصولات</Link>
+                    <a href="#product" className={styles.listItem}>محصولات</a>
                     <CategoryIcon className={styles.menuIcons} />
                 </li>
                 <li className={styles.listItems}>

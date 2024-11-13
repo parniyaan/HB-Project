@@ -1,25 +1,25 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import React, {useState} from 'react';
+import {useRouter} from 'next/navigation';
+import Image from 'next/image';
 import styles from './products.module.scss';
 import Button from '@mui/material/Button';
-
-import { useCars } from '../../../context/context.jsx';
+import {useCars} from '../../../context/context.jsx';
 
 function Products() {
-    const { carData } = useCars();
-    console.log(carData)
-
-    const router = useRouter();
-
+    const {carData, setSelectedCar,setShowProduct,ShowProduct} = useCars();
     const [showMore, setShowMore] = useState(false);
+
     const toggleShowMore = () => setShowMore(!showMore);
     const displayedCars = showMore ? carData : carData.slice(0, 6);
 
-    function handleProductClick(productName) {
-        router.push(`/products/${productName}`);
+    function handleProductClick(product) {
+        console.log(product);
+        setSelectedCar(product);
+        setShowProduct(!ShowProduct)
     }
+
 
     return (
         <div className={styles.productsSection} id="product">
@@ -28,10 +28,19 @@ function Products() {
                 {displayedCars.map((car, index) => (
                     <li
                         key={index}
-                        onClick={() => handleProductClick(car.slug)}
+                        onClick={() => handleProductClick(car)}
                         className={styles.productCard}
-                        style={{ backgroundImage: `url(${car.src})` }}
                     >
+                        <div className={styles.imageWrapper}>
+                            <Image
+                                src={car.src}
+                                alt={car.name}
+                                layout="fill"
+                                objectFit="cover"
+                                className={styles.productImage}
+                            />
+                        </div>
+
                         <div className={styles.overlay}>
                             <h1 className={styles.productName}>{car.name}</h1>
                             <p className={styles.productDescription}>{car.description}</p>
@@ -62,3 +71,4 @@ function Products() {
 }
 
 export default Products;
+
